@@ -1,0 +1,10 @@
+a. select COUNT(*) from sales
+b. select sum(selling_price) from sales
+c. select avg(selling_price) from sales
+d. select avg(selling_price) from sales join games on sales.gid = games.gid where games.pid = 1
+e. select sum(selling_price) from sales join games on sales.gid = games.gid where games.pid = 2
+f. select count(*) from games
+g. select count(*) from games group by pid
+h. select games.name, platform_type.name, games.stock from games join platform_type on games.pid = platform_type.pid order by games.stock asci. select customer_info.forename, customer_info.surname, SUM(sales.selling_price) from customer_info join sales on customer_info.cid = sales.cid group by customer_info.forename, customer_info.surname order by SUM(sales.selling_price) asc
+j. select games.name, platform_type.name, avg(wishlist.rating) from games join wishlist on games.gid = wishlist.gid join platform_type on games.pid = platform_type.pid group by games.name, platform_type.name
+k. begin transaction;insert into customer_info values ('Euan', 'Miller', '6 Abertay Lane', 'Euan@email.com', '2017-04-10', '3');insert into wishlist values ('51','4', '5');insert into sales values ('51', '4', '35');rollback;
